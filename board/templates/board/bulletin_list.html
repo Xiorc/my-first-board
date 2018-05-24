@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Concokorea freeboard</title>
+	</head>
+	<body>
+		<div>
+			<framset rows="300,*">
+				<frame src="menu.html" frameborder="1" noresize>
+					<h1>코엔코코리아 자유게시판</h1>
+				</frame>
+			</framset>
+		</div>
+
+		{% for board in boards %}
+		<div>
+			<p>published: {{ board.published_date }}</p>
+			<h1><a href="">{{ board.title }}</a></h1>
+			<p>{{ board.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
+	</body>
+</html>
